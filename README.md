@@ -9,13 +9,13 @@ It proposes the following endpoints:
 
 * GET all events
 
-* GET one specitic event
+* GET one specific event
 
 * POST a new event
 
-* POST a new comment (related to a specific event)
+* POST a new comment (related to an event)
 
-* GET all comments related to an event
+* GET all comments (related to an event)
 
 This app has been developed with:
 - ruby 2.6.3
