@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.new
-    @events = Event.current
+    @events = Event.where('date > ?', Time.zone.now - 10.days)
   end
 
   def show
