@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hey there!
 
-Things you may want to cover:
+Eventeur.com is an app that helps you manage your events and consult all current events.
+You can find it here: https://heloisemaz.github.io/eventeur-app/
 
-* Ruby version
+It proposes the following endpoints: 
 
-* System dependencies
+* GET all events
 
-* Configuration
+* GET one specitic event
 
-* Database creation
+* POST a new event
 
-* Database initialization
+* POST a new comment (related to a specific event)
 
-* How to run the test suite
+* GET all comments related to an event
 
-* Services (job queues, cache servers, search engines, etc.)
+This app has been developed with:
+- ruby 2.6.3
+- Rails 6.0.3.4
+- HTML & CSS
 
-* Deployment instructions
-
-* ...
+Hope to discuss my work with you soon!

@@ -7,5 +7,5 @@ class Event < ApplicationRecord
   validates :email, presence: true
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create
 
-  scope :actual, -> { where('date > ?', Time.zone.now - 10.days) }
+  scope :current, -> { where('date > ?', Time.zone.now - 10.days) }
 end

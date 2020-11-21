@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.new
-    @events = Event.actual
+    @events = Event.current
   end
 
   def show
