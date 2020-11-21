@@ -1,6 +1,6 @@
-<%= simple_form_for(event) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date %>
+<%= simple_form_for @event, html: { class: "form" } do |f| %>
+  <%= f.input :name, label_html: { class: 'event_input' } %>
+  <%= f.input :date, as: :string, input_html: {type: :date} %>
   <%= f.input :description %>
   <%= f.input :email %>
   <%= f.submit %>

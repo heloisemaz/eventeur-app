@@ -1,5 +1,38 @@
-<ul>
-  <% @events.each do |event| %>
-    <li><%= link_to event.name, event_path(event) %></li>
-  <% end %>
-</ul>
+<div class="home-banner">
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+  <h1>Discover our awesome events<br> and<br> Create your own!</h1>
+
+  <%= link_to 'Create an event', new_event_path, :class => "btn btn-primary" %>
+
+
+
+</div>
+
+<div class="container">
+  <h2>The best events</h2>
+  <div class="row">
+    <% @events.each do |event| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80);">
+            <div class="card-category"><%= event.date.strftime('%d/%m/%Y')%></div>
+            <div class="card-description">
+            <h6><%= event.email %></h6>
+              <h2>
+                <% if Time.zone.yesterday < event.date && event.date < Time.zone.today + 10.days %>
+                    <%= link_to event.name, event_path(event), class: 'red' %>
+                <% elsif event.date < Time.zone.now%>
+                    <%= link_to event.name, event_path(event), class: 'gray' %>
+                <% else %>
+                    <%= link_to event.name, event_path(event), class: 'white' %>
+                <% end %>
+              </h2>
+              <h6><%= event.description %></h6>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

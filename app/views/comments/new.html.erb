@@ -1,4 +1,14 @@
-<%= simple_form_for [ @event, @comment ] do |f| %>
-  <%= f.input :message %>
-  <%= f.submit "Submit comment", class: "btn btn-primary" %>
-<% end %>
+<div class="form-banner">
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+  <h1>Add your own comment!</h1>
+</div>
+
+<div class="form_div">
+  <%= simple_form_for [ @event, @comment ] do |f| %>
+    <%= f.input :author %>
+    <%= f.input :message %>
+    <%= f.submit "Submit comment", class: "btn btn-primary" %>
+  <% end %>
+</div>

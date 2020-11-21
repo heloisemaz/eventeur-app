@@ -1,12 +1,15 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update]
+  before_action :set_event, only: %i[show]
 
   def index
-    @events = Event.all
+    @event = Event.new
+    @events = Event.actual
   end
 
   def show
+    @events = Event.all
     @event = Event.find(params[:id])
+    @comment = Comment.new
   end
 
   def new
@@ -14,19 +17,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
-    @event.save
-    redirect_to event_path(@event)
-  end
-
-  def edit
-    @event = Event.find(params[:id])
-  end
-
-  def update
-    @event = Event.find(params[:id])
-    @event.update(params[:event])
-    redirect_to event_path(@event)
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end
   end
 
   private

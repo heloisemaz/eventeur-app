@@ -1,14 +1,57 @@
-<h2><%= @event.name %></h2>
-<p><%= @event.date %></p>
-<p><%= @event.description %></p>
+<div class="page content">
+	<div class="show-banner"
+		style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1508905475152-c325323ac955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80')">
+		<div class="banner-content">
+			<h1>Join our <%= @event.name %> event!</h1>
+			<p>It's always the good moment</p>
+		</div>
+	</div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> |
-<%= link_to 'Leave a comment', new_event_comment_path(@event) %>
 
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-7">
+				<h3>Event</h3>
+				<ul>
+          <li>Date of the event: <%= @event.date.strftime('%d/%m/%Y')%></li>
+          <li>Description of the event: <%= @event.description%></li>
+          <li>Email of the organizer: <%= @event.email%></li>
+				</ul>
+			</div>
 
-<ul class="list-group">
-  <% @event.comments.each do |comment| %>
-    <li class="list-group-item"><%= comment.message %></li>
+			<div class="col-xs-12 col-sm-5 text-align">
+				<h3>Join the community!</h3>
+				<div class="join">
+					<%= link_to 'Add a comment', new_event_comment_path(@event), :class => "btn btn-primary" %>
+        </div>
+
+        <div class="join2">
+          <%= link_to 'See all events', root_path, :class => "btn btn-primary" %>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+  <% if @event.comments.count.positive?%>
+    <h3>Discover all comments about this event</h3>
+    <% @event.comments.each do |comment|%>
+      <div class="comment-box">
+        <div class="comment-head">
+          <h6 class="comment-name"><%= comment.author %></h6>
+        </div>
+        <div class="comment-content">
+          <%= comment.message %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="show-banner second"
+		  style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1495837174058-628aafc7d610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80')">
+		  <div class="banner-content">
+			  <h1>No comments at the moment!</h1>
+			  <p>Be the first one to leave a message 😊</p>
+		  </div>
+    </div>
   <% end %>
-</ul>
+</div>
