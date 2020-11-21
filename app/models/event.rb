@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  has_many :comments, dependent: :destroy
+
   validates :name, presence: true, length: { maximum: 60 }
   validates :date, presence: true
   validates :description, length: { maximum: 300 }

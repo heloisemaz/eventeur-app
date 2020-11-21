@@ -1,0 +1,14 @@
+<h2><%= @event.name %></h2>
+<p><%= @event.date %></p>
+<p><%= @event.description %></p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %> |
+<%= link_to 'Leave a comment', new_event_comment_path(@event) %>
+
+
+<ul class="list-group">
+  <% @event.comments.each do |comment| %>
+    <li class="list-group-item"><%= comment.message %></li>
+  <% end %>
+</ul>

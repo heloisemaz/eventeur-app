@@ -1,0 +1,4 @@
+<%= simple_form_for [ @event, @comment ] do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Submit comment", class: "btn btn-primary" %>
+<% end %>
