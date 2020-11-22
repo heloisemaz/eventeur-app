@@ -23,7 +23,7 @@
               <h2>
                 <% if Time.zone.yesterday < event.date && event.date < Time.zone.today + 10.days %>
                     <%= link_to event.name, event_path(event), class: 'red' %>
-                <% elsif event.date < Time.zone.now%>
+                <% elsif event.date < Time.zone.now %>
                     <%= link_to event.name, event_path(event), class: 'gray' %>
                 <% else %>
                     <%= link_to event.name, event_path(event), class: 'white' %>

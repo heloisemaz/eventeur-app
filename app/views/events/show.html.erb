@@ -13,9 +13,9 @@
 			<div class="col-xs-12 col-sm-7">
 				<h3>Event</h3>
 				<ul>
-          <li>Date of the event: <%= @event.date.strftime('%d/%m/%Y')%></li>
-          <li>Description of the event: <%= @event.description%></li>
-          <li>Email of the organizer: <%= @event.email%></li>
+          <li>Date of the event: <%= @event.date.strftime('%d/%m/%Y') %></li>
+          <li>Description of the event: <%= @event.description %></li>
+          <li>Email of the organizer: <%= @event.email %></li>
 				</ul>
 			</div>
 
@@ -33,7 +33,7 @@
 	</div>
 </div>
 <div class="container">
-  <% if @event.comments.count.positive?%>
+  <% if @event.comments.count.positive? %>
     <h3>Discover all comments about this event</h3>
     <% @event.comments.each do |comment|%>
       <div class="comment-box">

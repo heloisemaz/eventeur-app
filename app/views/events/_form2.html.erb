@@ -1,6 +1,0 @@
-<%= simple_form_for [@event, @comment], html: { class: "form" } do |f| %>
-  <%= f.input :author %>
-  <%= f.input :message %>
-  <%= f.association :event %>
-  <%= f.submit "Add a comment", class: "btn btn-primary" %>
-<% end %>
