@@ -3,7 +3,7 @@
 Hey there!
 
 Eventeur.com is an app that helps you manage your events and consult all current events.
-You can find it here: https://heloisemaz.github.io/eventeur-app/
+You can find it here: https://eventeur-app.herokuapp.com/
 
 It proposes the following endpoints: 
 
@@ -20,6 +20,6 @@ It proposes the following endpoints:
 This app has been developed with:
 - ruby 2.6.3
 - Rails 6.0.3.4
-- HTML & CSS
+- HTML & CSS & Bootstrap
 
 Hope to discuss my work with you soon!
